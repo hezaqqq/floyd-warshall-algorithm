@@ -35,17 +35,14 @@ graph* load_graph(char *filename) {
         // Counts the length of the int (for display)
         int len = 0;
         int temp = weight;
-
         if (temp <= 0) {
             len++;
             temp = -temp;
         }
-
         while (temp > 0) {
             temp /= 10;
             len++;
         }
-
         if (len > g->longest_weight) {
             g->longest_weight = len;
         }
