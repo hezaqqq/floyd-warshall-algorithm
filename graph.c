@@ -1,7 +1,3 @@
-//
-// Created by Timothée on 18/02/2026.
-//
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -22,12 +18,12 @@ graph* load_graph(char *filename) {
     for (int i = 0; i < g->num_vertices; i++) {
         g->matrix[i] = malloc(g->num_vertices * sizeof(int));
         for (int j = 0; j < g->num_vertices; j++) {
-            g->matrix[i][j] = 0;
+            g->matrix[i][j] = 999999;
         }
     }
 
     // Filling of matrix
-    for (int i = 0; i < g->num_vertices; i++) {
+    for (int i = 0; i < g->num_arcs; i++) {
         int source, destination, weight;
         fscanf(graph_text, "%d %d %d", &source, &destination, &weight);
         g->matrix[source][destination] = weight;
@@ -70,7 +66,12 @@ void display_graph(graph *g) {
         printf("%*d", box_width, i);
 
         for (int j = 0; j < g->num_vertices; j++) {
-            printf("%*d", box_width, g->matrix[i][j]);
+            if (g->matrix[i][j] == 999999) {
+                printf("%*s∞", box_width-1, "");
+            }
+            else {
+                printf("%*d", box_width, g->matrix[i][j]);
+            }
         }
         printf("\n");
     }
