@@ -89,9 +89,52 @@ void display_graph(graph *g) {
     printf("Arcs: %d\n", g->num_arcs);
     printf("Adjancy matrix:\n");
 
-    display_matrix(g->matrix, g->longest_weight, g->num_vertices, "    ∞");
+    display_matrix(g->matrix, g->longest_weight, g->num_vertices, "INF");
 
     printf("\n\nPredecessor matrix:\n");
 
     display_matrix(g->predecessor_matrix, g->longest_weight, g->num_vertices, "_");
+}
+
+void calculate_step_for_k(graph *g, int k) {
+    if (k < 0 || k >= g->num_vertices) {
+        return;
+    }
+
+    for (int i = 0; i < g->num_vertices; i++) {
+        for (int j = 0; j < g->num_vertices; j++) {
+            // Skip the chosen pivot node k row and column
+            if (i == k || j == k) {
+                continue;
+            }
+
+            // Check if a path through the chosen node k exists
+            if (g->matrix[i][k] != 999999 && g->matrix[k][j] != 999999) {
+                int new_dist = g->matrix[i][k] + g->matrix[k][j];
+
+                if (g->matrix[i][j] > new_dist) {
+                    g->matrix[i][j] = new_dist;
+                    // Predecessor of j becomes the predecessor of j via k
+                    g->predecessor_matrix[i][j] = g->predecessor_matrix[k][j];
+                }
+            }
+        }
+    }
+}
+
+void calculate_full_floyd_warshall(graph *g) {
+
+    for (int k = 0; k < g->num_vertices; k++) {
+        calculate_step_for_k(g, k);
+
+        // Display the matrices result after a node
+        printf("\n--------------------------------------------");
+        printf("\nStep %d (Node %d)\n", k + 1, k);
+
+        printf("\nAdjacency Matrix:\n");
+        display_matrix(g->matrix, g->longest_weight, g->num_vertices, "INF");
+
+        printf("\nPredecessor Matrix:\n");
+        display_matrix(g->predecessor_matrix, g->longest_weight, g->num_vertices, "_");
+    }
 }
