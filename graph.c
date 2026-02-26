@@ -103,7 +103,7 @@ void calculate_step_for_k(graph *g, int k) {
 
     for (int i = 0; i < g->num_vertices; i++) {
         for (int j = 0; j < g->num_vertices; j++) {
-            // Skip the chosen pivot node k row and column
+            // Skip the chosen node k row and column
             if (i == k || j == k) {
                 continue;
             }
