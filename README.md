@@ -1,4 +1,6 @@
 # Floyd–Warshall Graph Project
+![EFREI](https://badgen.net/badge/Project/EFREI/blue?icon=github)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=black)
 
 Implementation of the Floyd–Warshall algorithm to compute shortest paths on directed weighted graphs.
 
