@@ -88,7 +88,7 @@ void display_matrix(int **matrix, int longest_weight, int num_vertices,char *rep
 void display_graph(graph *g) {
     printf("Vertices: %d\n", g->num_vertices);
     printf("Arcs: %d\n", g->num_arcs);
-    printf("Adjancy matrix:\n");
+    printf("Adjacency matrix:\n");
 
     display_matrix(g->matrix, g->longest_weight, g->num_vertices, "INF");
 
@@ -138,4 +138,73 @@ void calculate_full_floyd_warshall(graph *g) {
         printf("\nPredecessor Matrix:\n");
         display_matrix(g->predecessor_matrix, g->longest_weight, g->num_vertices, "_");
     }
+}
+
+int detect_absorbing_cycle(graph *g) {
+    for (int i = 0; i < g->num_vertices; i++) {
+        if (g->matrix[i][i] < 0) { // We check the diagonal values to see if the weight of going from a vertex to itself through any possible path is negative (this would mean that there is a negative cycle reachable from that vertex)
+            return 1; // Absorbing cycle detected
+        }
+    }
+    return 0; // No absorbing cycle
+}
+
+void display_shortest_path(graph *g, int start, int end) {
+    if (g->matrix[start][end] == 999999) {
+        printf("No path exists from %d to %d.\n", start, end);
+        return;
+    }
+
+    // We retrace the shortest path backwards from end to start thanks to the predecessor matrix
+    int path[1024]; 
+    int length = 0;
+    int current = end; // As stated above, we start from the last vertex
+
+    while (current != start) {
+        path[length] = current;
+        length++;
+        current = g->predecessor_matrix[start][current];
+    }
+    path[length] = start; // Adding the start at the end of the path
+    length++;
+
+    // Display the path array in the correct order, which is backwards again so it's the right way this time
+    printf("Shortest path from %d to %d: ", start, end);
+    for (int i = length - 1; i >= 0; i--) {
+        printf("%d", path[i]);
+        if (i > 0) { // We want to print the arrow after every vertex except the last one
+            printf(" -> ");
+        } 
+    }
+    printf("\nTotal weight: %d\n", g->matrix[start][end]);
+}
+
+
+void path_question(graph *g) {
+    char answer;
+
+    printf("\nDo you want to find a shortest path? (y/n): ");
+    scanf(" %c", &answer);
+
+    while (answer == 'y' || answer == 'Y') {
+        int start, end;
+
+        printf("Starting vertex (0 to %d): ", g->num_vertices - 1);
+        scanf("%d", &start);
+        printf("Ending vertex (0 to %d): ", g->num_vertices - 1);
+        scanf("%d", &end);
+
+        if (start < 0 || start >= g->num_vertices ||
+            end < 0 || end >= g->num_vertices) {
+            printf("Invalid vertices.\n");
+        } else if (start == end) {
+            printf("Start and end are the same vertex.\n");
+        } else {
+            display_shortest_path(g, start, end);
+        }
+
+        printf("\nAnother path? (y/n): ");
+        scanf(" %c", &answer);
+    }
+    return;
 }

@@ -9,5 +9,15 @@ int main() {
 
     calculate_full_floyd_warshall(g);
 
+    // Absorbing cycle detection
+    if (detect_absorbing_cycle(g)) {
+        printf("\nThe graph contains an absorbing cycle (at least)\n");
+        printf("Shortest paths cannot be computed.\n");
+    } else {
+        printf("\nNo absorbing circuit detected.\n");
+        // Allow user to query shortest paths
+        path_question(g);
+    }
+
     return 0;
 }
