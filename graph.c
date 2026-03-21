@@ -34,6 +34,7 @@ graph* load_graph(char *filename) {
     for (int i = 0; i < g->num_arcs; i++) {
         int source, destination, weight;
         fscanf(graph_text, "%d %d %d", &source, &destination, &weight);
+        if (source == destination) continue;
         g->matrix[source][destination] = weight;
         g->predecessor_matrix[source][destination] = source;
 
