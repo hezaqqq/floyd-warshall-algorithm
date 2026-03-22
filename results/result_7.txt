@@ -1,0 +1,185 @@
+Vertices: 7
+Arcs: 12
+Adjacency matrix:
+       0   1   2   3   4   5   6
+   0   0   2  -5 INF INF INF INF
+   1 INF   0  -3   3 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3 INF INF   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+
+Predecessor matrix:
+       0   1   2   3   4   5   6
+   0   _   0   0   _   _   _   _
+   1   _   _   1   1   _   _   _
+   2   2   2   _   2   _   _   _
+   3   _   _   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 1 (Node 0)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0   2  -5 INF INF INF INF
+   1 INF   0  -3   3 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3 INF INF   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   0   0   _   _   _   _
+   1   _   _   1   1   _   _   _
+   2   2   2   _   2   _   _   _
+   3   _   _   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 2 (Node 1)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0   2  -5   5 INF INF INF
+   1 INF   0  -3   3 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3 INF INF   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   0   0   1   _   _   _
+   1   _   _   1   1   _   _   _
+   2   2   2   _   2   _   _   _
+   3   _   _   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 3 (Node 2)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0  -1  -5  -2 INF INF INF
+   1   4   0  -3   0 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3   9   6   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   2   0   2   _   _   _
+   1   2   _   1   2   _   _   _
+   2   2   2   _   2   _   _   _
+   3   2   2   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 4 (Node 3)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0  -1  -5  -2 INF INF INF
+   1   4   0  -3   0 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3   9   6   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   2   0   2   _   _   _
+   1   2   _   1   2   _   _   _
+   2   2   2   _   2   _   _   _
+   3   2   2   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 5 (Node 4)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0  -1  -5  -2 INF INF INF
+   1   4   0  -3   0 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3   9   6   2   0 INF INF INF
+   4 INF INF INF INF   0   5 INF
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   2   0   2   _   _   _
+   1   2   _   1   2   _   _   _
+   2   2   2   _   2   _   _   _
+   3   2   2   3   _   _   _   _
+   4   _   _   _   _   _   4   _
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 6 (Node 5)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0  -1  -5  -2 INF INF INF
+   1   4   0  -3   0 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3   9   6   2   0 INF INF INF
+   4 INF INF INF INF   0   5   3
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   2   0   2   _   _   _
+   1   2   _   1   2   _   _   _
+   2   2   2   _   2   _   _   _
+   3   2   2   3   _   _   _   _
+   4   _   _   _   _   _   4   5
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+--------------------------------------------
+Step 7 (Node 6)
+
+Adjacency Matrix:
+       0   1   2   3   4   5   6
+   0   0  -1  -5  -2 INF INF INF
+   1   4   0  -3   0 INF INF INF
+   2   7   4   0   3 INF INF INF
+   3   9   6   2   0 INF INF INF
+   4 INF INF INF INF   0   5   3
+   5 INF INF INF INF   2   0  -2
+   6 INF INF INF INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3   4   5   6
+   0   _   2   0   2   _   _   _
+   1   2   _   1   2   _   _   _
+   2   2   2   _   2   _   _   _
+   3   2   2   3   _   _   _   _
+   4   _   _   _   _   _   4   5
+   5   _   _   _   _   5   _   5
+   6   _   _   _   _   _   _   _
+
+No absorbing circuit detected.
