@@ -1,0 +1,87 @@
+C:\Users\Utilisateur\CLionProjects\floyd-warshall-algorithm\cmake-build-debug\floyd_warshall_algorithm.exe
+Vertices: 4
+Arcs: 6
+Adjacency matrix:
+       0   1   2   3
+   0   0   1  -5 INF
+   1 INF   0  -3   2
+   2 INF   4   0   2
+   3 INF INF INF   0
+
+
+Predecessor matrix:
+       0   1   2   3
+   0   _   0   0   _
+   1   _   _   1   1
+   2   _   2   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 1 (Node 0)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1  -5 INF
+   1 INF   0  -3   2
+   2 INF   4   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   0   _
+   1   _   _   1   1
+   2   _   2   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 2 (Node 1)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1  -5   3
+   1 INF   0  -3   2
+   2 INF   4   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   0   1
+   1   _   _   1   1
+   2   _   2   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 3 (Node 2)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0  -1  -5  -3
+   1 INF   0  -3  -1
+   2 INF   4   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   2   0   2
+   1   _   _   1   2
+   2   _   2   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 4 (Node 3)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0  -1  -5  -3
+   1 INF   0  -3  -1
+   2 INF   4   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   2   0   2
+   1   _   _   1   2
+   2   _   2   _   2
+   3   _   _   _   _
+
+No absorbing circuit detected.
