@@ -3,7 +3,7 @@
 #include "graph.h"
 
 int main() {
-    graph *g = load_graph("../graph1.txt");
+    graph *g = load_graph("../graphs/graph_1.txt");
 
     display_graph(g);
 
