@@ -32,11 +32,16 @@ It works with directed graphs and supports weighted edges, including negative va
 ├── main.c
 ├── graph.c
 ├── graph.h
+├── /results
+|   ├── result_1.txt
+|   ├── result_2.txt
+|   ├── ...
+|   └── result_13.txt
 └── /graphs
-    ├── graph1.txt
-    ├── graph2.txt
+    ├── graph_1.txt
+    ├── graph_2.txt
     ├── ...
-    └── graph13.txt
+    └── graph_13.txt
 ```
 
 3. Make sure all graph `.txt` files are in the correct path (same directory or update path in `main.c`)
