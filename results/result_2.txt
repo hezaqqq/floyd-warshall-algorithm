@@ -1,0 +1,86 @@
+Vertices: 4
+Arcs: 5
+Adjacency matrix:
+       0   1   2   3
+   0   0   1   5 INF
+   1 INF   0  -3   5
+   2 INF INF   0   2
+   3 INF INF INF   0
+
+
+Predecessor matrix:
+       0   1   2   3
+   0   _   0   0   _
+   1   _   _   1   1
+   2   _   _   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 1 (Node 0)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1   5 INF
+   1 INF   0  -3   5
+   2 INF INF   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   0   _
+   1   _   _   1   1
+   2   _   _   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 2 (Node 1)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1  -2   6
+   1 INF   0  -3   5
+   2 INF INF   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   1   1
+   1   _   _   1   1
+   2   _   _   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 3 (Node 2)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1  -2   0
+   1 INF   0  -3  -1
+   2 INF INF   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   1   2
+   1   _   _   1   2
+   2   _   _   _   2
+   3   _   _   _   _
+
+--------------------------------------------
+Step 4 (Node 3)
+
+Adjacency Matrix:
+       0   1   2   3
+   0   0   1  -2   0
+   1 INF   0  -3  -1
+   2 INF INF   0   2
+   3 INF INF INF   0
+
+Predecessor Matrix:
+       0   1   2   3
+   0   _   0   1   2
+   1   _   _   1   2
+   2   _   _   _   2
+   3   _   _   _   _
+
+No absorbing circuit detected.
