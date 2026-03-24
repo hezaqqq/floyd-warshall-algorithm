@@ -2,8 +2,17 @@
 #include <stdlib.h>
 #include "graph.h"
 
-int main() {
-    graph *g = load_graph("../graph1.txt");
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Usage: %s filename\n", argv[0]);
+        return 1;
+    }
+
+    graph *g = load_graph(argv[1]);
+    if (g == NULL) {
+        printf("No graph found (%s).\n", argv[1]);
+        return 1;
+    }
 
     display_graph(g);
 

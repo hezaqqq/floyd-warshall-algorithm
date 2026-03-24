@@ -3,6 +3,8 @@
 
 graph* load_graph(char *filename) {
     FILE *graph_text = fopen(filename, "r");
+    if (graph_text == NULL) return NULL;
+
     graph *g = malloc(sizeof(graph));
     g->longest_weight = 0;
 
